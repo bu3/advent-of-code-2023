@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import org.junit.Test;
 
-public class Day1Test {
+public class Day2Test {
 
     @Test
-    public void shouldReturn142() throws URISyntaxException, IOException {
-        assertThat(new Day1().convert("day1.test.txt"), equalTo(142));
+    public void shouldReturn8() throws URISyntaxException, IOException {
+        assertThat(new Day2(12, 13, 14).count("day2.test.txt"), equalTo(8));
     }
 }

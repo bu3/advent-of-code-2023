@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Day1 {
+public class Day1 extends Day {
 
     public static final String FILE = "day1.txt";
 
@@ -26,19 +26,6 @@ public class Day1 {
         File file = loadFile(filename);
         List<String> fileContent = readFileContent(file);
         return convertContent(fileContent).stream().reduce(0, Integer::sum);
-    }
-
-    private File loadFile(String filename) throws URISyntaxException {
-        ClassLoader classLoader = Day1.class.getClassLoader();
-        URL resource = classLoader.getResource(filename);
-        if (resource != null) {
-            return new File(resource.toURI());
-        }
-        throw new IllegalArgumentException("file" + FILE + " not found!");
-    }
-
-    private List<String> readFileContent(File file) throws IOException {
-        return readAllLines(file.toPath(), UTF_8);
     }
 
     private List<Integer> convertContent(List<String> content) {
